@@ -1,0 +1,574 @@
+@charset "UTF-8";
+
+h1 {
+  width: 64%;
+  margin: 160px auto 110px;
+}
+nav ul li a {
+  color: #31355d; /* リンクのテキスト色 */
+  text-decoration: none; /* 下線を削除 */
+}
+nav ul li a:hover {
+  color: #000000; /* ホバー時のリンクのテキスト色 */
+}
+nav ul {
+  display: flex;
+  justify-content: end;
+  width: 95%;
+  margin-top: -80px;
+  padding-left: 3.294%;
+  color: #31355d;
+  gap: 40px;
+}
+ul > li {
+  display: inline;
+  list-style: none;
+}
+
+/* about */
+.about {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 150px;
+}
+.about p {
+  color: #ffffff;
+}
+
+.about h2 {
+  position: relative;
+  top: 0;
+  margin-right: 700px;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100px;
+  font-family: heisei-maru-gothic-std, sans-serif;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1000px;
+  height: 615px;
+  padding: 0 16px;
+  color: #ffffff;
+}
+
+.text-overlay p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-size: 18px;
+  line-height: 3.3;
+  font-family: heisei-maru-gothic-std, sans-serif;
+  word-wrap: break-word;
+}
+
+.btntextchange {
+  display: inline-block;
+  /*テキストの基点とするためrelativeを指定*/
+  position: absolute;
+  position: absolute;
+  right: 70px;
+  bottom: 0;
+  min-width: 150px;
+  padding: 30px;
+  /*ボタンの形状*/
+  border-radius: 40px;
+  background: #ffffff;
+  color: #333333;
+  text-decoration: none;
+  text-align: center;
+  outline: none;
+  /*アニメーションの指定*/
+  transition: all .2s;
+}
+
+/*hoverした際の変化*/
+.btntextchange:hover {
+  background: #ffff;
+  color: #333333;
+}
+
+.btntextchange span {
+  /*ブロック要素にしてテキスト折り返しなし*/
+  display: block;
+  /*絶対配置でテキストの位置を決める*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  /*アニメーションの指定*/
+  transition: all .5s;
+}
+
+/*差し替わるテキストの設定*/
+.btntextchange span:nth-child(2) {
+  opacity: 0; /*透過0に*/
+}
+
+/*hoverするとテキストが入れ替わる設定*/
+.btntextchange:hover span:nth-child(1) {
+  opacity: 0; /*透過0に*/
+}
+
+.btntextchange:hover span:nth-child(2) {
+  opacity: 1; /*不透明に*/
+}
+
+/* works(slider) */
+.slider {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 47%;
+}
+.workspace-container {
+  position: relative;
+  margin-top: 600px;
+}
+.slick-prev, .slick-next {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+.slick-prev {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  transform: translateY(-50%);
+  width: 110px;
+  height: 87px;
+  background-image: url("../img/yajirushihidari.png"); /* 左矢印の画像 */
+  content: "";
+}
+.slick-next {
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  transform: translateY(-50%);
+  width: 110px;
+  height: 87px;
+  background-image: url("../img/yajirushimigi.png"); /* 右矢印の画像、必要に応じて設定 */
+  content: "";
+}
+.slick-prev:hover, .slick-next:hover {
+  visibility: visible !important; /* ホバー時も常に表示 */
+  opacity: 1 !important; /* ホバー時にも透明度を100%に */
+}
+.slick-prev:hover, .slick-prev:focus {
+  background: url("../img/yajirushihidari.png");
+  color: #ffffff00;
+  outline: none;
+}
+.slick-next:hover, .slick-next:focus {
+  background: url("../img/yajirushimigi.png");
+  color: #ffffff00;
+  outline: none;
+}
+.slick-prev:before, .slick-next:before {
+  display: none;
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
+body {
+  padding: 100px 0 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+h3 {
+  position: absolute; /* 絶対位置指定 */
+  top: -148px;
+  left: 50%; /* 画面の中央に配置 */
+  transform: translateX(-50%); /* 中央揃え */
+  color: #31355d;
+  font-size: 100px;
+  font-family: heisei-maru-gothic-std, sans-serif;
+}
+.image-container {
+  display: inline-block; /* 画像を横並びに配置するため */
+  margin: 10px; /* 画像の間に余白を設定 */
+}
+
+.rocket-icon {
+  width: 50%;
+  height: auto;
+}
+.button {
+  width: 500px;
+  height: 90px;
+  border-radius: 10px; /* 角丸の半径 */
+  background-color: #31355d; /* 背景色 */
+  color: #ffff;
+}
+.my-parts {
+  display: inline-block;
+  position: relative;
+  padding: .2em 2em 0;
+  border-radius: 40px; /* 丸みを強くする */
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .2);
+  background-color: #31355d;
+  color: #ffffff;
+  font-size: 50px;
+  line-height: 80px;
+  cursor: pointer;
+}
+.footer-container {
+  position: relative;
+  text-align: center; /* テキストを中央寄せにする */
+}
+
+.footer-container img {
+  width: 100%;
+  height: auto;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center; /* メニューアイテムを中央寄せ */
+  align-items: center; /* アイテムを垂直中央揃え */
+  list-style-type: none; /* リストマーカーをなくす */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  margin: 0; /* マージンをリセット */
+  padding: 0; /* パディングをリセット */
+  /* ナビゲーションバーの高さを設定 */
+}
+
+.footer-nav li {
+  margin: 0 15px; /* メニューアイテム間のスペース */
+  font-size: 18px;
+}
+
+.footer-nav a {
+  color: #ffffff; /* リンクの色 */
+  font-size: 18px; /* フォントサイズを調整 */
+  text-decoration: none; /* 下線を消す */
+}
+
+.footer-nav img.instagram-icon {
+  width: 15px;
+  height: 15px;
+}
+.example3 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 9999;
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: #31355d;
+  color: #ffffff;
+  text-decoration: none;
+  animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+}
+@keyframes floating-y {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+.example3 {
+  position: fixed; /* またはabsolute, 画面に固定する場合はfixedを使用 */
+  right: 10px; /* 右端から0pxの位置 */
+  bottom: 20px; /* 下端から20pxの位置に配置（必要に応じて調整） */
+}
+
+.example3 .top-page-icon {
+  width: 65px; /* アイコンのサイズ */
+  height: auto;
+  margin-bottom: 10px; /* アイコンとテキストの間隔 */
+}
+
+/* Contact */
+.contact {
+  padding: 70px 16px 130px;
+}
+.contact p {
+  color: #31355d;
+}
+.contact .btn-icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 61px;
+  height: 48px;
+  content: url(../img/btn-icon.png);
+}
+
+/* footer */
+footer {
+  position: relative;
+}
+
+
+/* ===== aboutページ===== */
+/* profile */
+.about-profile {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.about-profile .about__inner {
+  display: flex;
+}
+.about-profile h1 {
+  width: 100%;
+  margin: 45px 0;
+  color: #ffffff00;
+  font-size: 100px;
+  text-align: left;
+
+  -webkit-text-stroke: 1px #31355d;
+          text-stroke: 1px #31355d;
+}
+.about-profile .photo {
+  width: 50%;
+}
+.about-profile .about__text-area {
+  width: 52%;
+  margin-top: 400px;
+  padding-right: 16px;
+  text-align: left;
+}
+.about-profile .about__text-name {
+  margin-bottom: 28px;
+  color: #000000;
+  font-size: 45px;
+  line-height: 1.73;
+}
+.about-profile .about__text-hobby {
+  margin-bottom: 25px;
+  color: #000000;
+  font-size: 26px;
+  line-height: 1.73;
+}
+.about-profile .about__text {
+  margin-bottom: 60px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* strength */
+.about-strength {
+  position: relative;
+  width: 100%;
+  margin-top: 360px;
+}
+.strength__bg-img {
+  position: relative;
+  z-index: -3;
+}
+.strength__bg-img img {
+  height: 1738px;
+
+  object-fit: cover;
+}
+@media screen and (min-width: 1358px) {
+  .strength__bg-img img {
+    height: auto;
+
+    object-fit: contain;
+  }
+}
+.about-strength .strength__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.about-strength h1 {
+  position: absolute;
+  top: -360px;
+  color: #31355d;
+  font-size: 100px;
+  text-align: left;
+}
+.about-strength .strength__list {
+  position: absolute;
+  top: calc(50% + 100px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1000px;
+}
+.about-strength .strength__item {
+  display: flex;
+  align-items: center;
+  padding: 0 10px 200px;
+
+  gap: 10px;
+}
+.about-strength .strength__item:last-child {
+  padding-bottom: 330px;
+}
+.about-strength .strength__item-ttl {
+  position: relative;
+  width: 300px;
+  color: #ffffff;
+  text-align: center;
+}
+.about-strength .strength__item-text {
+  width: calc(100% - 300px);
+  color: #ffffff;
+  line-height: 2.4375;
+  text-align: left;
+}
+.strength__item-ttl.num03 {
+  z-index: 3;
+}
+.strength__item-ttl.num01::before {
+  position: absolute;
+  top: 50%;
+  left: 26px;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  width: 248px;
+  height: 248px;
+  background-image: url(../img/strength01@2x.png);
+  background-size: 100% 100%;
+  content: "";
+  animation: floating-y02 1.8s ease-in-out infinite alternate-reverse;
+}
+.strength__item-ttl.num02::before {
+  position: absolute;
+  top: 50%;
+  left: 35px;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  width: 234px;
+  height: 234px;
+  background-image: url(../img/strength02@2x.png);
+  background-size: 100% 100%;
+  content: "";
+  animation: floating-y02 1.5s ease-in-out infinite alternate-reverse;
+}
+.strength__item-ttl.num03::before {
+  position: absolute;
+  top: 50%;
+  left: -0px;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background-image: url(../img/strength03@2x.png);
+  background-size: 100% 100%;
+  content: "";
+  animation: floating-y02 2.0s ease-in-out infinite alternate-reverse;
+}
+@keyframes floating-y02 {
+  0% {
+    transform: translateY(-53%);
+  }
+  100% {
+    transform: translateY(-48%);
+  }
+}
+
+/* skill */
+.about-skill {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.about-skill h1 {
+  position: absolute;
+  top: -360px;
+  color: #31355d;
+  font-size: 100px;
+  text-align: left;
+}
+
+.about-skill .skill__list {
+  display: flex;
+  padding: 0 10px;
+
+  gap: 6%;
+}
+.about-skill .skill__item {
+  width: 47%;
+}
+.about-skill .design-img {
+  width: 170px;
+  height: 350px;
+  margin: 0 auto;
+}
+.about-skill .design-img img {
+  padding: 60px 0;
+}
+.about-skill .coding-img {
+  width: 220px;
+  height: 350px;
+  margin: 0 auto;
+}
+.about-skill .coding-img img {
+  padding: 100px 0;
+}
+.about-skill h2 {
+  margin-right: 0;
+  color: #31355d;
+  font-size: 16px;
+}
+
+.about-skill .design .skill__tool__list {
+  display: flex;
+
+  gap: 80px;
+}
+.about-skill .coding .skill__tool__list {
+  display: flex;
+
+  gap: 50px;
+}
+.about-skill .skill__tool__list li {
+  width: 30%;
+  margin: 0 auto;
+}
+.about-skill .skill__item p {
+  height: 107px;
+  color: #31355d;
+  text-align: left;
+}
+.about-skill .skill__item-detail > div {
+  width: 120px;
+  height: 30px;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  background-color: #31355d;
+  color: #ffffff;
+  line-height: 30px;
+  text-align: center;
+}
+
+
+/* ===== worksページ ===== */
+
+@media screen and (max-width: 767px) {
+  
+}
+
+
+/* ===== contactページ ===== */
+
+@media screen and (max-width: 767px) {
+  
+}
